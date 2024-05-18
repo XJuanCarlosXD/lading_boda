@@ -8,7 +8,7 @@ import Form from "../Components/Form";
 
 const Home = (props) => {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-hidden mb-24">
       <Index />
       <Invita />
       <Famili />

@@ -1,14 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 
 const Form = (props) => {
+  const { peop1, peop2 } = useParams();
   const {
     register,
     handleSubmit,
     setValue,
     watch,
     formState: { errors },
-  } = useForm({ defaultValues: { confirm: undefined } });
+  } = useForm({
+    defaultValues: { confirm: undefined, asistiran: `${peop1} ${peop2}` },
+  });
 
   const onSubmit = (data) => {
     console.log("datas", data);
@@ -35,23 +39,15 @@ const Form = (props) => {
       <img
         src="/img/flower.png"
         alt="flower.png"
-        className="absolute -top-10 left-0 w-11/12"
+        className="absolute -top-10 -left-10 w-11/12"
       />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="relative z-20 py-28 pb-10 px-6 w-full flex justify-center items-start flex-col gap-4"
       >
-        <h2 className="text-3xl text-center text-pink_custom font-extrabold capitalize">
-          Confirmación de asistencia
+        <h2 className="text-5xl text-center text-pink_custom font-extrabold">
+          Confirmación Asistencia
         </h2>
-        <p className="text-justify font-cursive">
-          Estamos emocionados de celebrar este día con ustedes y queremos
-          asegurarnos de que todo esté listo para recibirte. <br /> Por favor,
-          háznoslo saber lo antes posible para que podamos hacer los arreglos
-          necesarios. Si necesitas más detalles o tienes alguna pregunta, no
-          dudes en contactarnos. <br /> ¡Esperamos verte pronto y compartir este
-          momento especial juntos!
-        </p>
         <div className="flex flex-col w-full gap-4">
           <div className="w-full">
             <input
@@ -61,7 +57,7 @@ const Form = (props) => {
             />
             <label
               htmlFor="asistir"
-              className="text-4xl text-pink_custom font-semibold"
+              className="text-4xl text-white font-semibold"
             >
               ¿Podrás asistir?
             </label>
@@ -101,21 +97,22 @@ const Form = (props) => {
           <div className="w-full flex flex-col gap-1">
             <label
               htmlFor="asistir"
-              className="text-2xl text-pink_custom font-semibold"
+              className="text-2xl text-white font-semibold"
             >
               ¿Quiénes asistirán?
             </label>
             <textarea
-              className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
+              className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4 text-4xl"
               placeholder="¿Quiénes asistirán?"
-              rows={4}
+              disabled
+              rows={3}
               {...register("asistiran", { required: true })}
             />
           </div>
           <div className="w-full flex flex-col gap-1">
             <label
               htmlFor="asistir"
-              className="text-2xl text-pink_custom font-semibold"
+              className="text-2xl text-white font-semibold"
             >
               Sugerir canción
             </label>
@@ -129,13 +126,13 @@ const Form = (props) => {
           <div className="w-full flex flex-col gap-1">
             <label
               htmlFor="asistir"
-              className="text-2xl text-pink_custom font-semibold"
+              className="text-2xl text-white font-semibold"
             >
               Comentarios o preguntas
             </label>
             <textarea
               className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
-              placeholder="Si tienes algo para comentar lo pudes hacer aqui"
+              placeholder="Si tienes algo para comentar lo puedes hacer aqui"
               rows={4}
               {...register("description", { required: true })}
             />
@@ -143,7 +140,7 @@ const Form = (props) => {
 
           <button
             type="submit"
-            className="bg-pink_custom text-2xl font-semibold rounded-full py-2"
+            className="bg-pink_custom hover:bg-green_os hover:text-white text-2xl font-semibold rounded-full py-2"
           >
             Enviar
           </button>

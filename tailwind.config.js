@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         cursive: ["cursive", "David Libre"],
         IMFELL: ["serif", "IM Fell English SC"],
+        merienda: ['cursive', "Merienda"]
       },
       colors: {
         pink_custom: "#FFE4F3",

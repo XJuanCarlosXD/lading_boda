@@ -11,8 +11,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.im-fell-english-sc-regular {
+.font-IMFell {
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+.im-fell-english-sc-regular {
+  font-family: "Merienda", cursive;
+  font-weight: 700;
   font-style: normal;
 }

@@ -11,7 +11,7 @@ const Save = (props) => {
           style={{ borderTopRightRadius: "10rem" }}
         />
       </div>
-      <div className="flex flex-col gap-4 justify-center items-center p-2">
+      <div className="flex flex-col gap-4 justify-start items-center p-2">
         <img src="/img/paloma.svg" alt="paloma.svg" />
         <h2 className="text-6xl font-bold text-amber_re brightness-150">
           SAVE <b className="text-2xl">THE</b> DATE
