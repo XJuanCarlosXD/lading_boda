@@ -69,7 +69,7 @@ const Present = () => {
         </button>
       </div>
       {active && active === true ? (
-        <ul className="im-fell-english-sc-regular text-start w-full">
+        <ul className="im-fell-english-sc-regular text-start w-full px-4">
           <li>
             <b>Cuenta:</b> 9606628900
           </li>
@@ -85,7 +85,7 @@ const Present = () => {
         </ul>
       ) : (
         active === false && (
-          <ul className="im-fell-english-sc-regular text-end w-full">
+          <ul className="im-fell-english-sc-regular text-end w-full px-4">
             <li>
               <b>Cuenta:</b> 21546640023
             </li>
