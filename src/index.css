@@ -22,3 +22,8 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+.font-bold-merienda {
+  font-family: "Merienda", cursive;
+  font-weight: 900;
+  font-style: normal;
+}

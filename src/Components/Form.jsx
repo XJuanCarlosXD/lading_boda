@@ -11,7 +11,10 @@ const Form = (props) => {
     watch,
     formState: { errors },
   } = useForm({
-    defaultValues: { confirm: undefined, asistiran: `${peop1} ${peop2}` },
+    defaultValues: {
+      confirm: undefined,
+      asistiran: `${peop1} \n${peop2}`,
+    },
   });
 
   const onSubmit = (data) => {
@@ -61,7 +64,11 @@ const Form = (props) => {
             >
               ¿Podrás asistir?
             </label>
-            <div className="mt-2 bg-green_os text-xl font-medium text-pink_custom rounded-full flex justify-center items-center transition-all w-full">
+            <div
+              className={`${
+                errors.confirm && "outline outline-4 outline-red-500"
+              } mt-2 bg-green_os text-xl font-medium text-pink_custom rounded-full flex justify-center items-center transition-all w-full`}
+            >
               <button
                 type="button"
                 className={`${
@@ -88,9 +95,10 @@ const Form = (props) => {
                 No
               </button>
             </div>
-            {errors.asistir && (
-              <p className="text-pink_custom">
-                Por favor, selecciona una opción.
+            \
+            {errors.confirm && (
+              <p className="text-black text-xl font-serif font-black">
+                ⚠ Por favor, confirma Asistencia.
               </p>
             )}
           </div>
@@ -105,7 +113,7 @@ const Form = (props) => {
               className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4 text-4xl"
               placeholder="¿Quiénes asistirán?"
               disabled
-              rows={3}
+              rows={2}
               {...register("asistiran", { required: true })}
             />
           </div>

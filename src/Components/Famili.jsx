@@ -1,8 +1,8 @@
 import React from "react";
 
-const Famili = (props) => {
+const Famili = () => {
   return (
-    <div className="h-screen bg-pink_custom flex flex-col justify-center items-center relative -top-12">
+    <div className="h-full bg-pink_custom flex flex-col justify-center items-center relative -top-8">
       <img
         src="/img/flower.png"
         alt="flower.png"

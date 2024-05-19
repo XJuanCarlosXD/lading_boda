@@ -32,7 +32,7 @@ function Countdown() {
       <h2 className="font-merienda font-semibold text-2xl im-fell-english-sc-regular">
         Cuenta Regresiva
       </h2>
-      <div className="text-xl flex justify-center gap-4 items-center bg-green_os w-11/12 py-2 text-pink_custom divide-x-2 divide-pink_custom rounded-lg">
+      <div className="text-xl flex justify-center gap-4 items-center bg-green_os w-11/12 py-2 text-pink_custom divide-x-2 divide-pink_custom rounded-lg font-black">
         {timeLeft.days !== 0 && (
           <div className="text-center w-full">
             {timeLeft.days}

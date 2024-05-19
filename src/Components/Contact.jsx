@@ -3,11 +3,11 @@ import React from "react";
 
 const Contact = (props) => {
   return (
-    <div className="h-screen overflow-hidden bg-pink_custom relative w-full flex flex-col justify-start items-start">
+    <div className="h-full overflow-hidden bg-pink_custom relative w-full flex flex-col justify-start items-start">
       <img
         src="/img/carton.png"
         alt="carton.png"
-        className="h-screen absolute -left-40 max-w-none z-10"
+        className="h-full absolute -left-40 max-w-none z-10"
         style={{ width: "37rem" }}
       />
       <img
@@ -31,7 +31,7 @@ const Contact = (props) => {
           <h2 className="text-8xl text-pink_custom font-extrabold text-center">
             Lugar
           </h2>
-          <p className="text-4xl italic font-cursive font-bold">
+          <p className="text-4xl italic font-cursive text-nowrap font-bold">
             Salón Vista Marina{" "}
           </p>
           <iframe
@@ -55,12 +55,12 @@ const Contact = (props) => {
         <div className="w-full flex justify-center items-center">
           <button
             type="button"
-            className="left-24 bg-green_os px-8 py-2 rounded-full text-xl text-white flex justify-center items-center relative font-medium underline"
+            className="left-20 bg-green_os px-8 py-2 rounded-full text-xl text-white flex justify-center items-center relative font-medium underline"
           >
             <i className="fa-solid fa-hand rotate-90 absolute -left-2 top-0.5 text-amber-500 text-4xl"></i>
             Orientaciones
           </button>
-          <div className="w-full relative -left-12">
+          <div className="w-full relative -left-14">
             <h2 className="text-6xl text-nowrap text-pink_custom font-extrabold">
               Dress Code
             </h2>

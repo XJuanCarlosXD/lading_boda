@@ -26,7 +26,7 @@ const Index = (props) => {
       />
       <div className="w-4/12 absolute -bottom-6 z-20 right-1">
         <video controls autoPlay loop muted ref={videoRef}>
-          <source src={"/media/song.mp3"} type="video/mp4" />
+          <source src={"/media/song.mp3"} type="audio/mp3" />
         </video>
       </div>
     </div>
