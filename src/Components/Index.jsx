@@ -13,10 +13,10 @@ const Index = (props) => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="flex flex-col gap-4 relative w-screen">
+    <div className="flex flex-col gap-4 h-full relative w-screen">
       <img
-        src="/images/boda-7.jpg"
-        className="h-screen w-screen"
+        src="/images/boda-15.jpg"
+        className="h-full w-screen"
         alt="index.png"
       />
       <img

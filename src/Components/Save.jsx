@@ -2,16 +2,19 @@ import React from "react";
 
 const Save = (props) => {
   return (
-    <div className="h-screen flex w-full relative overflow-hidden">
+    <div
+      className=" flex w-full relative overflow-hidden"
+      style={{ height: "90vh" }}
+    >
       <div>
         <img
           src="/images/boda-2.jpg"
-          className="w-full h-screen absolute brightness-75 -z-10"
+          className="w-full h-full absolute brightness-75 -z-10"
           alt="mariae.jpg"
           style={{ borderTopRightRadius: "10rem" }}
         />
       </div>
-      <div className="flex flex-col gap-0  justify-start items-center p-2">
+      <div className="flex flex-col gap-0 justify-start items-center p-2">
         <h2
           className="font-bold mt-10 text-yellow-300 brightness-150"
           style={{ fontSize: "3.4rem" }}

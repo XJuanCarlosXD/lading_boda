@@ -11,7 +11,7 @@ import Carousel from "../Components/Carousel";
 const Home = (props) => {
   const slides = [];
   for (let i = 1; i <= 15; i++) {
-    if (i === 5 || i === 2 || i === 7 || i === 1 || i === 14) {
+    if (i === 5 || i === 2 || i === 15 || i === 1 || i === 10) {
     } else {
       slides.push(`/images/boda-${i}.jpg`);
     }

@@ -30,9 +30,13 @@ const Loading = () => {
   return (
     <div className={`relative ${active && "showOFF"}`}>
       <div className="flex flex-col justify-center items-center w-screen h-screen fixed top-0 z-50">
-        <div
-          className={`bg-white w-full h-full ${active && "slide-up"} `}
-        ></div>
+        <div className={`bg-white w-full h-full ${active && "slide-up"} `}>
+          <img
+            src="https://imgs.search.brave.com/QIjh6Lv95UPnWP16oEnACtX30Y6eYMdo65SaztgpBmI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90by1ncmF0aXMv/dGV4dHVyYS1wYXBl/bC1hcnJ1Z2Fkby1i/bGFuY29fNTM4NzYt/OTU5MTcuanBnP3Np/emU9NjI2JmV4dD1q/cGc"
+            alt="mantel"
+            className=" w-full h-full"
+          />
+        </div>
         <div
           className={`absolute flex flex-col gap-4 justify-center items-center w-full ${
             active && "scale-0 delay-150 duration-300 transition-all"
@@ -71,9 +75,14 @@ const Loading = () => {
             </div>
           </div>
         </div>
-        <div
-          className={`bg-white h-full w-screen  ${active && "slide-donw"}`}
-        ></div>
+        <div className={`bg-white h-full w-screen  ${active && "slide-donw"}`}>
+          {" "}
+          <img
+            src="https://imgs.search.brave.com/QIjh6Lv95UPnWP16oEnACtX30Y6eYMdo65SaztgpBmI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90by1ncmF0aXMv/dGV4dHVyYS1wYXBl/bC1hcnJ1Z2Fkby1i/bGFuY29fNTM4NzYt/OTU5MTcuanBnP3Np/emU9NjI2JmV4dD1q/cGc"
+            alt="mantel"
+            className=" w-full h-full"
+          />
+        </div>
       </div>
     </div>
   );
