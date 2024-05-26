@@ -28,11 +28,7 @@ const Loading = () => {
       });
   }, []);
   return (
-    <div
-      className={`relative ${
-        active && "scale-0 delay-150 duration-300 transition-all"
-      }`}
-    >
+    <div className={`relative ${active && "showOFF"}`}>
       <div className="flex flex-col justify-center items-center w-screen h-screen fixed top-0 z-50">
         <div
           className={`bg-white w-full h-full ${active && "slide-up"} `}

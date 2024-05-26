@@ -61,3 +61,18 @@ body {
   position: relative;
   animation: slideDown 3s linear forwards;
 }
+
+@keyframes showOFF {
+  from {
+    z-index: 10;
+  }
+  to {
+    z-index: -999;
+  }
+}
+
+.showOFF {
+  position: relative;
+  animation: showOFF 3s linear forwards;
+  animation-delay: 3s;
+}
