@@ -34,7 +34,7 @@ const Famili = () => {
         </p>
         <img
           src="/img/anillos.gif"
-          className="w-6/12 relative -top-6"
+          className="w-6/12 relative top-0"
           alt="anillos.gif"
         />
       </div>

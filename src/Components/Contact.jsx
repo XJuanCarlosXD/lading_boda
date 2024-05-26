@@ -5,7 +5,7 @@ const Contact = (props) => {
   const [active, setActive] = useState(false);
   return (
     <div
-      className={`h-full overflow-hidden bg-pink_custom relative w-full flex flex-col justify-start items-start ${
+      className={`h-full bg-pink_custom relative w-full flex flex-col justify-start items-start ${
         active && "z-30"
       }`}
     >
@@ -36,7 +36,7 @@ const Contact = (props) => {
           <h2 className="text-8xl text-pink_custom font-extrabold text-center">
             Lugar
           </h2>
-          <p className="text-4xl italic font-cursive text-nowrap font-bold">
+          <p className="text-4xl italic font-cursive text-nowrap font-bold im-fell-english-sc-regular">
             Salón Vista Marina{" "}
           </p>
           <iframe
@@ -51,7 +51,7 @@ const Contact = (props) => {
             <h2 className="text-8xl text-pink_custom font-extrabold text-center">
               Fecha
             </h2>
-            <p className="text-4xl italic font-cursive font-bold text-center">
+            <p className="text-4xl italic font-cursive font-bold text-center im-fell-english-sc-regular">
               Sábado 6 de julio <b className="text-white font-normal">5:30</b>{" "}
               pm (<b className="text-white font-normal">puntual</b>)
             </p>
@@ -72,7 +72,7 @@ const Contact = (props) => {
             <h2 className="text-6xl text-nowrap text-pink_custom font-extrabold">
               Dress Code
             </h2>
-            <p className="text-2xl italic font-cursive font-bold text-end">
+            <p className="text-2xl italic font-cursive font-bold text-end im-fell-english-sc-regular">
               Formal
             </p>
             <div className="flex justify-end items-end w-9/12">

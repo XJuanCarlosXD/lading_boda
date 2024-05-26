@@ -2,7 +2,7 @@ import React from "react";
 
 const Save = (props) => {
   return (
-    <div className="h-screen flex w-full relative">
+    <div className="h-screen flex w-full relative overflow-hidden">
       <div>
         <img
           src="/images/boda-2.jpg"
@@ -25,7 +25,7 @@ const Save = (props) => {
       <img
         src="/img/flower.png"
         alt="flower.png"
-        className="absolute rotate-180 -bottom-10 -right-10 w-11/12"
+        className="absolute rotate-180 -bottom-44 -right-10 w-11/12"
       />
     </div>
   );

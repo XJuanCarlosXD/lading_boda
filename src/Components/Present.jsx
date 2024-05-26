@@ -38,7 +38,7 @@ const Present = () => {
         serían de gran ayuda para comenzar esta nueva etapa juntos.
       </p>
       <h2 className="font-bold-merienda text-4xl">Transferencias Bancarias</h2>
-      <div className="grid grid-cols-2 place-items-center w-full p-4">
+      <div className="grid grid-cols-2 max-sm:gap-2 place-items-center w-full p-4">
         <button type="button">
           <img
             src="https://imgs.search.brave.com/6RRKjRRPRwluAcDY1Ynu9wwKJtQhEtFu9oQ0Bl_Ao8Q/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zYi5n/b2IuZG8vbWVkaWEv/ZGxnaGMyMzMvYmFu/cmVzZXJ2YXMuc3Zn.svg"
@@ -102,13 +102,15 @@ const Present = () => {
         )
       )}
       <h2 className="font-bold-merienda text-4xl">Lista de Regalos</h2>
-      <button
-        type="button"
+      <a
+        href="https://listaderegalos.casacuesta.com/Event/Mar%C3%ADa-Enmanuel"
+        target="_blank"
         className="bg-green_os px-8 py-2 rounded-full text-xl text-white flex justify-center items-center relative font-medium underline"
+        rel="noreferrer"
       >
         <i className="fa-solid fa-hand rotate-90 absolute -left-2 top-0.5 text-amber-500 text-4xl"></i>
         Ver Detalles
-      </button>
+      </a>
     </div>
   );
 };
