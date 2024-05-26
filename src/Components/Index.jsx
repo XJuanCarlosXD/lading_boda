@@ -22,7 +22,7 @@ const Index = (props) => {
       <img
         src="/img/flower.png"
         alt="flower.png"
-        className="absolute -left-5 -bottom-10 -rotate-90 w-80"
+        className="absolute -left-5 -bottom-5 -rotate-90 w-44"
       />
       <div className="w-4/12 absolute -bottom-6 z-20 right-1">
         <video controls autoPlay loop muted ref={videoRef}>
