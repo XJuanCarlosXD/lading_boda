@@ -17,6 +17,12 @@ body {
   font-style: normal;
 }
 
+.im-fell-english-sc-bold {
+  font-family: "Merienda", cursive;
+  font-weight: 800;
+  font-style: normal;
+}
+
 .im-fell-english-sc-regular {
   font-family: "Merienda", cursive;
   font-weight: 700;
@@ -26,4 +32,32 @@ body {
   font-family: "Merienda", cursive;
   font-weight: 900;
   font-style: normal;
+}
+
+@keyframes slideUp {
+  from {
+    top: 0;
+  }
+  to {
+    top: -999px;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -999px;
+  }
+}
+
+.slide-up {
+  position: relative;
+  animation: slideUp 3s linear forwards;
+}
+
+.slide-donw {
+  position: relative;
+  animation: slideDown 3s linear forwards;
 }
