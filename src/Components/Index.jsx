@@ -15,7 +15,7 @@ const Index = (props) => {
   return (
     <div className="flex flex-col gap-4 relative w-screen">
       <img
-        src="/images/index.png"
+        src="/images/boda-7.jpg"
         className="h-screen w-screen"
         alt="index.png"
       />

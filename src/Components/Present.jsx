@@ -19,13 +19,13 @@ const Present = () => {
       <img
         src="/img/flower.png"
         alt="flower.png"
-        className="absolute -left-36 w-full -z-10"
+        className="absolute opacity-50 top-36 -left-36 w-full -z-10"
         style={{ transform: "rotate(-30deg)" }}
       />
       <img
         src="/img/flower.png"
         alt="flower.png"
-        className="absolute -right-36 -rotate-90 w-11/12 -z-10"
+        className="absolute -right-36 top-24 mt-4 opacity-50 -rotate-90 w-11/12 -z-10"
         style={{ transform: "rotate(135deg)" }}
       />
       <h2 className="font-bold-merienda text-4xl">Detalles y Regalos</h2>

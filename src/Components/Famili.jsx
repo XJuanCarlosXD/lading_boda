@@ -10,10 +10,13 @@ const Famili = () => {
       />
       <div className="font-IMFELL flex flex-col justify-center items-center gap-4 w-full p-4 pt-48 text-lg">
         <div className="text-center">
-          <p className="uppercase text-md opacity-55 im-fell-english-sc-regular">
+          <p className="uppercase text-2xl opacity-55 im-fell-english-sc-regular">
             Las Familias
           </p>
-          <h2 className="font-medium text-xl italic im-fell-english-sc-regular mb-8">
+          <h2
+            className="font-medium italic im-fell-english-sc-regular mb-8"
+            style={{ fontSize: "1.35rem" }}
+          >
             Martínez Tejeda & Abreu Paulino{" "}
           </h2>
         </div>

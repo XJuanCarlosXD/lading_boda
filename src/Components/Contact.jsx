@@ -1,9 +1,14 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React from "react";
+import React, { useState } from "react";
 
 const Contact = (props) => {
+  const [active, setActive] = useState(false);
   return (
-    <div className="h-full overflow-hidden bg-pink_custom relative w-full flex flex-col justify-start items-start">
+    <div
+      className={`h-full overflow-hidden bg-pink_custom relative w-full flex flex-col justify-start items-start ${
+        active && "z-30"
+      }`}
+    >
       <img
         src="/img/carton.png"
         alt="carton.png"
@@ -55,7 +60,10 @@ const Contact = (props) => {
         <div className="w-full flex justify-center items-center">
           <button
             type="button"
-            className="left-20 bg-green_os px-8 py-2 rounded-full text-xl text-white flex justify-center items-center relative font-medium underline"
+            onClick={() => {
+              setActive(true);
+            }}
+            className="left-20 bg-green_os px-8 py-2 rounded-full text-xl text-white z-20 flex justify-center items-center relative font-medium underline"
           >
             <i className="fa-solid fa-hand rotate-90 absolute -left-2 top-0.5 text-amber-500 text-4xl"></i>
             Orientaciones
@@ -76,6 +84,25 @@ const Contact = (props) => {
           </div>
         </div>
       </div>
+      {active && (
+        <div className="fixed w-screen h-screen top-0" style={{ zIndex: 99 }}>
+          <div className="relative bg-black/75">
+            <i
+              className="fas fa-xmark absolute top-3 right-3 text-4xl text-red-500 z-50 cursor-pointer"
+              onClick={() => {
+                setActive(false);
+              }}
+            ></i>
+            <iframe
+              loading="lazy"
+              className="w-screen h-screen pt-16 relative z-10"
+              src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDvf6HBTw&#x2F;lQ5nE5la1kYzAwdsKjjFRQ&#x2F;view?embed"
+              allowfullscreen="allowfullscreen"
+              allow="fullscreen"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
