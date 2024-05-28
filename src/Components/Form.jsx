@@ -1,24 +1,38 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { getDatas } from "../utils/controller";
+import { useState } from "react";
 
-const Form = (props) => {
-  const { peop1, peop2 } = useParams();
+const Form = () => {
+  const { peop1, peop2, tel } = useParams();
+  const [checkm, setCheckm] = useState([]);
+
   const {
     register,
     handleSubmit,
     setValue,
     watch,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
       confirm: undefined,
-      asistiran: `${peop1} \n${peop2}`,
+      asistiran: [peop1, peop2],
     },
   });
 
-  const onSubmit = (data) => {
-    console.log("datas", data);
+  const onSubmit = async (data) => {
+    const datas = {
+      confirma: data.confirm,
+      confirm: checkm,
+      cancion: data.cancion,
+      description: data.description,
+      tel: tel,
+    };
+    const api = new getDatas();
+    await api.handleOnAddDocc(datas, () => {}, "Invitacion Confirmada");
+    reset();
   };
   return (
     <div className="h-full overflow-hidden  relative w-full flex flex-col justify-start items-start">
@@ -109,13 +123,52 @@ const Form = (props) => {
             >
               ¿Quiénes asistirán?
             </label>
-            <textarea
-              className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4 text-4xl"
-              placeholder="¿Quiénes asistirán?"
-              disabled
-              rows={2}
-              {...register("asistiran", { required: true })}
-            />
+            {watch("asistiran").map((row, index) => (
+              <div
+                className="flex items-center ps-4 border border-gray-200 rounded bg-green_os"
+                key={index}
+              >
+                <input
+                  id={`check-${index}`}
+                  type="checkbox"
+                  value=""
+                  {...register(`asisti${index}`)}
+                  name="bordered-checkbox"
+                  className="w-4 h-4 text-white bg-green_os border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2"
+                  onClick={() => {
+                    const currentValue = watch(`asisti${index}`);
+                    const updatedValue = !currentValue;
+
+                    setCheckm((prev) => {
+                      const updatedCheckm = prev.map((item) =>
+                        item.asistira === row
+                          ? { ...item, confir: updatedValue }
+                          : item
+                      );
+
+                      if (!prev.some((item) => item.asistira === row)) {
+                        updatedCheckm.push({
+                          asistira: row,
+                          confir: updatedValue,
+                        });
+                      }
+
+                      return updatedCheckm;
+                    });
+
+                    setValue(`asisti${index}`, updatedValue, {
+                      shouldValidate: false,
+                    });
+                  }}
+                />
+                <label
+                  htmlFor={`check-${index}`}
+                  className="w-full py-4 ms-2 text-4xl font-medium text-gray-900 dark:text-gray-300"
+                >
+                  {row}
+                </label>
+              </div>
+            ))}
           </div>
           <div className="w-full flex flex-col gap-1">
             <label
@@ -128,7 +181,7 @@ const Form = (props) => {
               className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
               placeholder="¿Cuál canción te gustaría escuchar o bailar en nuestra boda?"
               rows={4}
-              {...register("cancion", { required: true })}
+              {...register("cancion")}
             />
           </div>
           <div className="w-full flex flex-col gap-1">
@@ -142,7 +195,7 @@ const Form = (props) => {
               className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
               placeholder="Si tienes algo para comentar lo puedes hacer aqui"
               rows={4}
-              {...register("description", { required: true })}
+              {...register("description")}
             />
           </div>
 
