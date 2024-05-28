@@ -30,11 +30,11 @@ const Admin = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-start p-4 w-full h-full min-h-screen gap-4 bg-gray-900 overflow-hidden">
+    <div className="flex flex-col justify-center items-start p-4m max-sm:p-0 w-full h-full min-h-screen gap-4 bg-gray-900 overflow-hidden max-sm:overflow-scroll">
       <div className="w-screen ">
         <table className="w-full text-sm text-left rtl:text-right text-white">
-          <thead className="text-xl uppercase bg-gray-500 w-full">
-            <tr>
+          <thead className="text-xl uppercase bg-gray-500 w-full max-sm:text-xs">
+            <tr className="text-center">
               <th>Invitado</th>
               <th>Numero</th>
               <th>Confirmado</th>
@@ -54,7 +54,7 @@ const Admin = () => {
 
               return (
                 <tr key={index} className="text-start">
-                  <td className="text-start text-2xl">
+                  <td className="text-start text-2xl max-sm:text-xs">
                     <ul>
                       <li>
                         {item.nombre1}{" "}
@@ -68,12 +68,14 @@ const Admin = () => {
                       )}
                     </ul>
                   </td>
-                  <td className="text-start text-2xl">{item.telefono}</td>
+                  <td className="text-start text-2xl max-sm:text-xs">
+                    {item.telefono}
+                  </td>
                   <td className="text-start pl-10">
                     <input
                       type="checkbox"
                       name={`conf-${index}`}
-                      className="w-8 h-8"
+                      className="w-8 h-8 max-sm:w-4 max-sm:h-4"
                       checked={
                         datas.find((x) => x.tel === item.telefono)?.confirma
                           ? true
@@ -85,7 +87,7 @@ const Admin = () => {
                     <input
                       type="checkbox"
                       name={`noti-${index}`}
-                      className="w-8 h-8"
+                      className="w-8 h-8 max-sm:w-4 max-sm:h-4"
                       onClick={async () => {
                         const dataTO = datas.find(
                           (x) => x.tel === item.telefono
