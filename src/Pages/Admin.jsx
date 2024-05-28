@@ -124,7 +124,9 @@ const Admin = () => {
                           copyToClipboard(
                             `https://invitacion-boda-maria-enmanuel.netlify.app/#/${encodeURIComponent(
                               item.nombre1
-                            )}/null/${encodeURIComponent(item.telefono)}`
+                            )}/${encodeURIComponent(
+                              item.nombre2
+                            )}/${encodeURIComponent(item.telefono)}`
                           );
                         }
                       }}
