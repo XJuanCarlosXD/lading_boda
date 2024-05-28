@@ -44,7 +44,10 @@ const Loading = () => {
             active && "scale-0 delay-150 duration-1000 transition-all"
           }`}
         >
-          <div className="relative flex flex-col gap-4 justify-center items-center w-full h-96 px-8">
+          <div
+            className="relative flex flex-col gap-4 justify-center items-center w-full px-8"
+            style={{ height: "25rem" }}
+          >
             <div
               className="relative border-8 border-yellow-600 w-full h-full flex flex-col gap-4 rounded-lg justify-end items-center p-2 shadow-2xl shadow-pink-300 bg-white/35 cursor-pointer z-40"
               onClick={() => {
@@ -54,8 +57,8 @@ const Loading = () => {
               <div className="absolute -top-20">
                 <div className="h-52 w-52 rotate-45 rounded-md border-b-8 border-r-8 border-solid border-yellow-600"></div>
               </div>
-              <div className="animate-bounce w-full">
-                <Tilty perspective={3000} className="pl-4 -translate-y-0">
+              <div className="w-full flex justify-center">
+                <Tilty perspective={3000} className="pl-4 -translate-y-12">
                   <img
                     src="/images/logo1.png"
                     className="rounded-full w-36 h-36"
@@ -63,9 +66,9 @@ const Loading = () => {
                   />
                 </Tilty>{" "}
               </div>
-              <ul className="absolute bottom-0 right-3 font-bold-merienda capitalize text-xl text-yellow-600">
+              <ul className="absolute bottom-0 text-end right-3 font-bold-merienda capitalize text-xl text-yellow-600">
                 <li>{peop1}</li>
-                <li>{peop2}</li>
+                {peop2 !== "null" && <li>{peop2}</li>}
               </ul>
               {imagesLoaded === false && (
                 <i
@@ -75,7 +78,7 @@ const Loading = () => {
             </div>
             <div className="flex justify-center flex-col items-center absolute -bottom-20 z-40">
               <i className="fas fa-arrow-up text-2xl text-yellow-600"></i>
-              <h2 className="uppercase text-yellow-600 text-xl font-black im-fell-english-sc-bold">
+              <h2 className="uppercase text-yellow-600 text-xl font-black im-fell-english-sc-bold animate-bounce">
                 PULSA PARA CONTINUAR
               </h2>
             </div>

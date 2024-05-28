@@ -18,7 +18,7 @@ const Form = () => {
   } = useForm({
     defaultValues: {
       confirm: undefined,
-      asistiran: peop2 === null ? [peop1] : [peop1, peop2],
+      asistiran: peop2 === "null" ? [peop1] : [peop1, peop2],
     },
   });
 
@@ -163,7 +163,7 @@ const Form = () => {
                 />
                 <label
                   htmlFor={`check-${index}`}
-                  className="w-full py-4 ms-2 text-4xl font-medium text-gray-900 dark:text-gray-300"
+                  className="w-full py-4 ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300"
                 >
                   {row}
                 </label>
