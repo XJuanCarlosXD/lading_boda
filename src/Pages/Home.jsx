@@ -7,6 +7,7 @@ import Contact from "../Components/Contact";
 import Form from "../Components/Form";
 import Present from "../Components/Present";
 import Carousel from "../Components/Carousel";
+import Loading from "../Components/Loading";
 
 const Home = (props) => {
   const slides = [];
@@ -26,6 +27,7 @@ const Home = (props) => {
       <Present />
       <Form />
       <Carousel slides={slides} />
+      <Loading />
     </div>
   );
 };
