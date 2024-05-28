@@ -116,11 +116,15 @@ const Admin = () => {
                       onClick={() => {
                         if (item.nombre2 === "") {
                           copyToClipboard(
-                            `https://invitacion-boda-maria-enmanuel.netlify.app/#/${item.nombre1}/null/${item.telefono}`
+                            `https://invitacion-boda-maria-enmanuel.netlify.app/#/${encodeURIComponent(
+                              item.nombre1
+                            )}/null/${encodeURIComponent(item.telefono)}`
                           );
                         } else {
                           copyToClipboard(
-                            `https://invitacion-boda-maria-enmanuel.netlify.app/#/${item.nombre1}/${item.nombre2}/${item.telefono}`
+                            `https://invitacion-boda-maria-enmanuel.netlify.app/#/${encodeURIComponent(
+                              item.nombre1
+                            )}/null/${encodeURIComponent(item.telefono)}`
                           );
                         }
                       }}
