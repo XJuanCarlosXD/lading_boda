@@ -18,7 +18,7 @@ const Form = () => {
   } = useForm({
     defaultValues: {
       confirm: undefined,
-      asistiran: [peop1, peop2],
+      asistiran: peop2 === null ? [peop1] : [peop1, peop2],
     },
   });
 

@@ -95,9 +95,15 @@ const Admin = () => {
                     type="button"
                     className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none uppercase"
                     onClick={() => {
-                      copyToClipboard(
-                        `https://invitacion-boda-maria-enmanuel.netlify.app/#/${item.nombre1}/${item.nombre2}/${item.telefono}`
-                      );
+                      if (item.nombre2 === "") {
+                        copyToClipboard(
+                          `https://invitacion-boda-maria-enmanuel.netlify.app/#/${item.nombre1}/null/${item.telefono}`
+                        );
+                      } else {
+                        copyToClipboard(
+                          `https://invitacion-boda-maria-enmanuel.netlify.app/#/${item.nombre1}/${item.nombre2}/${item.telefono}`
+                        );
+                      }
                     }}
                   >
                     Copiar
