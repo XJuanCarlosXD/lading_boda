@@ -10,7 +10,6 @@ const Admin = () => {
     if (state === true) {
       new getDatas().listenLastesDevits((res) => {
         const d = res.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-        console.log(d);
         setDatas(d);
         setState(res.metadata.hasPendingWrites);
       });
@@ -54,7 +53,7 @@ const Admin = () => {
 
               return (
                 <tr key={index} className="text-start">
-                  <td className="text-start text-2xl max-sm:text-xs">
+                  <td className="text-start text-2xl max-sm:text-xs max-sm:text-center">
                     <ul>
                       <li>
                         {item.nombre1}{" "}
@@ -68,7 +67,7 @@ const Admin = () => {
                       )}
                     </ul>
                   </td>
-                  <td className="text-start text-2xl max-sm:text-xs">
+                  <td className="text-start text-2xl max-sm:text-xs max-sm:text-center">
                     {item.telefono}
                   </td>
                   <td className="text-start pl-10">
@@ -83,7 +82,7 @@ const Admin = () => {
                       }
                     />
                   </td>
-                  <td className=" pl-10">
+                  <td className="pl-10 max-sm:pl-5">
                     <input
                       type="checkbox"
                       name={`noti-${index}`}
@@ -111,10 +110,10 @@ const Admin = () => {
                       }
                     />
                   </td>
-                  <td className=" pl-10">
+                  <td className="pl-10 max-sm:pl-0">
                     <button
                       type="button"
-                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none uppercase"
+                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 max-sm:py-1 max-sm:px-2  focus:outline-none uppercase"
                       onClick={() => {
                         if (item.nombre2 === "") {
                           copyToClipboard(
