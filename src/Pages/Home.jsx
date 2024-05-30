@@ -51,7 +51,14 @@ const Home = () => {
       <Save />
       <Contact />
       <Present />
-      {confirm && <Form />}
+      {confirm && (
+        <Form
+          onClick={() => {
+            setState(true);
+            setConfirm(false);
+          }}
+        />
+      )}
       <Carousel slides={slides} />
       <Loading />
       <Countdown />

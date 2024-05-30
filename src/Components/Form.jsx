@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getDatas } from "../utils/controller";
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ onClick }) => {
   const { peop1, peop2, tel } = useParams();
   const [checkm, setCheckm] = useState([]);
 
@@ -33,6 +33,7 @@ const Form = () => {
     const api = new getDatas();
     await api.handleOnAddDocc(datas, () => {}, "Invitacion Confirmada");
     reset();
+    onClick();
   };
   return (
     <div className="h-full overflow-hidden  relative w-full flex flex-col justify-start items-start">
