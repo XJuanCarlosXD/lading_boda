@@ -10,7 +10,7 @@ export const data: { nombre1: string; nombre2: string; telefono: string }[] = [
     nombre2: "Yohanka de Almonte",
     telefono: "8094258812",
   },
-  { nombre1: "Bienvenida Abreu", nombre2: "Pendiente", telefono: "" },
+  { nombre1: "Bienvenida Abreu", nombre2: "Pendiente", telefono: "212121223" },
   { nombre1: "Fátima Abreu", nombre2: "", telefono: "19143202037" },
   {
     nombre1: "Roberto Abreu",
@@ -35,7 +35,7 @@ export const data: { nombre1: string; nombre2: string; telefono: string }[] = [
   {
     nombre1: "Victor Medina",
     nombre2: "Yamel Villabrille",
-    telefono: "no lo tengo (conseguir)",
+    telefono: "8099771777",
   },
   {
     nombre1: "Carolina Bueno",
@@ -50,7 +50,7 @@ export const data: { nombre1: string; nombre2: string; telefono: string }[] = [
   {
     nombre1: "Rosa Peralta",
     nombre2: "José Rosario",
-    telefono: "no lo tengo (conseguir)",
+    telefono: "8098779903",
   },
   {
     nombre1: "Alexander Perez",

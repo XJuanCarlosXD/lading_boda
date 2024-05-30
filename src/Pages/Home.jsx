@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Index from "../Components/Index";
 import Invita from "../Components/Invita";
 import Famili from "../Components/Famili";
@@ -16,6 +16,7 @@ const Home = () => {
   const { tel } = useParams();
   const [state, setState] = React.useState(true);
   const [confirm, setConfirm] = React.useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const slides = [];
   for (let i = 1; i <= 15; i++) {
     if (i === 5 || i === 2 || i === 15 || i === 1 || i === 10) {
@@ -43,6 +44,25 @@ const Home = () => {
   useEffect(() => {
     getDataInit();
   }, [getDataInit]);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
+  if (!isMobile) {
+    return (
+      <div className="text-6xl flex w-screen h-screen font-black text-center justify-center items-center">
+        Esta página solo es visible en dispositivos móviles.
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col overflow-hidden mb-20">
       <Index />
