@@ -8,6 +8,7 @@ import Form from "../Components/Form";
 import Present from "../Components/Present";
 import Carousel from "../Components/Carousel";
 import Loading from "../Components/Loading";
+import Countdown from "../Components/Countdown";
 
 const Home = (props) => {
   const slides = [];
@@ -28,6 +29,7 @@ const Home = (props) => {
       <Form />
       <Carousel slides={slides} />
       <Loading />
+      <Countdown />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
-import Countdown from "./Components/Countdown";
 import Home from "./Pages/Home";
 import { Toaster } from "react-hot-toast";
 import Admin from "./Pages/Admin";
@@ -7,7 +6,6 @@ import Admin from "./Pages/Admin";
 function App() {
   return (
     <div>
-      <Countdown />
       <HashRouter>
         <Routes>
           <Route path="/:peop1/:peop2/:tel" element={<Home />}></Route>
