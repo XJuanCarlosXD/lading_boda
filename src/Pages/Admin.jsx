@@ -37,7 +37,7 @@ const Admin = () => {
               <th>Invitado</th>
               <th>Numero</th>
               <th>Confirmado</th>
-              <th>Notificado</th>
+              <th>Detalle</th>
               <th>Enlance</th>
             </tr>
           </thead>
@@ -82,28 +82,37 @@ const Admin = () => {
                       }
                     />
                   </td>
-                  <td className="pl-10 max-sm:pl-5">
-                    <input
-                      type="checkbox"
-                      name={`noti-${index}`}
-                      className="w-8 h-8 max-sm:w-4 max-sm:h-4"
-                      onClick={async () => {
-                        const dataTO = datas.find(
-                          (x) => x.tel === item.telefono
-                        );
-                        let valor = dataTO?.noti ? dataTO.noti : false;
-                        if (dataTO) {
-                          new getData(dataTO.id).handleOnUpdateDoc(
+                  <td className="group">
+                    <button
+                      type="button"
+                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 max-sm:py-1 max-sm:px-2  focus:outline-none uppercase"
+                    >
+                      Detalle
+                    </button>
+                    <div className="absolute w-56 scale-0 text-justify transition-all group-hover:scale-100 px-2 bg-black  text-xl rounded-xl">
+                      <ul className="list-disc p-3">
+                        {datas.find((x) => x.tel === item.telefono)
+                          ?.description && (
+                          <li>
+                            <b>Descripcion: </b>
                             {
-                              noti: !valor,
-                            },
-                            "Invitado Notificado"
-                          );
-                          valor = !valor;
-                        }
-                        setState(true);
-                      }}
-                    />
+                              datas.find((x) => x.tel === item.telefono)
+                                ?.description
+                            }
+                          </li>
+                        )}
+                        {datas.find((x) => x.tel === item.telefono)
+                          ?.cancion && (
+                          <li>
+                            <b>Cancion: </b>
+                            {
+                              datas.find((x) => x.tel === item.telefono)
+                                ?.cancion
+                            }
+                          </li>
+                        )}
+                      </ul>
+                    </div>
                   </td>
                   <td className="pl-10 max-sm:pl-0">
                     <button
