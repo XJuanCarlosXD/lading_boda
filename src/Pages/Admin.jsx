@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { data } from "../utils/data.ts";
-import { getData, getDatas } from "../utils/controller";
+import { getDatas } from "../utils/controller";
 import toast from "react-hot-toast";
 
 const Admin = () => {
@@ -89,7 +89,7 @@ const Admin = () => {
                     >
                       Detalle
                     </button>
-                    <div className="absolute w-56 scale-0 text-justify transition-all group-hover:scale-100 px-2 bg-black  text-xl rounded-xl">
+                    <div className="absolute w-56 scale-0 max-sm:right-3 text-justify transition-all group-hover:scale-100 px-2 bg-black  text-xl rounded-xl">
                       <ul className="list-disc p-3">
                         {datas.find((x) => x.tel === item.telefono)
                           ?.description && (
