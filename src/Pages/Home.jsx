@@ -11,6 +11,7 @@ import Loading from "../Components/Loading";
 import Countdown from "../Components/Countdown";
 import { useParams } from "react-router-dom";
 import { getDatas } from "../utils/controller";
+import { data } from "../utils/data.ts";
 
 const Home = () => {
   const { tel } = useParams();
@@ -24,6 +25,13 @@ const Home = () => {
       slides.push(`/images/boda-${i}.jpg`);
     }
   }
+
+  useEffect(() => {
+    const dt = data.find((x) => x.telefono === tel);
+    if (!dt) {
+      setConfirm(false);
+    }
+  }, [tel]);
 
   const getDataInit = useCallback(async () => {
     if (state === true) {
