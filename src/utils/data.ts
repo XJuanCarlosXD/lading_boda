@@ -92,5 +92,4 @@ export const data: { nombre1: string; nombre2: string; telefono: string }[] = [
   { nombre1: "Jose Luis Alcantara", nombre2: "", telefono: "8298502092" },
   { nombre1: "Katia Duverge", nombre2: "", telefono: "8097696474" },
   { nombre1: "Adriano Suarez", nombre2: "", telefono: "8297266791" },
-  { nombre1: "Zoila de los Santos", nombre2: "", telefono: "8299155352" },
 ];
