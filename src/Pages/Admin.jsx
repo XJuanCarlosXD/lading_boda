@@ -103,11 +103,6 @@ const Admin = () => {
                         }
                         setState(true);
                       }}
-                      checked={
-                        datas.find((x) => x.tel === item.telefono)?.noti
-                          ? true
-                          : false
-                      }
                     />
                   </td>
                   <td className="pl-10 max-sm:pl-0">
