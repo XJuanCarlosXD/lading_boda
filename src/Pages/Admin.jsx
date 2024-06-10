@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { data } from "../utils/data.ts";
 import { getDatas } from "../utils/controller";
 import toast from "react-hot-toast";
+import * as XLSX from "xlsx";
 
 const Admin = () => {
   const [state, setState] = React.useState(true);
@@ -31,6 +32,26 @@ const Admin = () => {
   return (
     <div className="flex flex-col justify-center items-start p-4m max-sm:p-0 w-full h-full min-h-screen gap-4 bg-gray-900 overflow-hidden max-sm:overflow-scroll">
       <div className="w-screen ">
+        <button
+          onClick={() => {
+            var wb = XLSX.utils.book_new(),
+              ws = XLSX.utils.json_to_sheet(datas);
+            XLSX.utils.book_append_sheet(wb, ws, "DataExport");
+            XLSX.writeFile(wb, "reportInvitation.xlsx");
+            return toast.success("Data Exportada a Excell 😎", {
+              icon: "📗",
+              style: {
+                borderRadius: "10px",
+                background: "#333",
+                color: "#fff",
+              },
+            });
+          }}
+          type="button"
+          className="w-full bg-green-500 text-xl text-white font-sans font-bold"
+        >
+          Excell
+        </button>
         <table className="w-full text-sm text-left rtl:text-right text-white">
           <thead className="text-xl uppercase bg-gray-500 w-full max-sm:text-xs">
             <tr className="text-center">
