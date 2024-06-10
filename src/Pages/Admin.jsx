@@ -7,10 +7,25 @@ import * as XLSX from "xlsx";
 const Admin = () => {
   const [state, setState] = React.useState(true);
   const [datas, setDatas] = React.useState([]);
+  const [excell, dataExcell] = React.useState([]);
   useEffect(() => {
     if (state === true) {
       new getDatas().listenLastesDevits((res) => {
         const d = res.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+        const combinedData = d.map((item1) => {
+          const matchingItem = data.find(
+            (item2) => item2.telefono === item1.tel
+          );
+          if (matchingItem) {
+            return {
+              nombre1: matchingItem.nombre1,
+              nombre2: matchingItem.nombre2,
+              ...item1,
+            };
+          }
+          return item1;
+        });
+        dataExcell(combinedData);
         setDatas(d);
         setState(res.metadata.hasPendingWrites);
       });
@@ -35,7 +50,7 @@ const Admin = () => {
         <button
           onClick={() => {
             var wb = XLSX.utils.book_new(),
-              ws = XLSX.utils.json_to_sheet(datas);
+              ws = XLSX.utils.json_to_sheet(excell);
             XLSX.utils.book_append_sheet(wb, ws, "DataExport");
             XLSX.writeFile(wb, "reportInvitation.xlsx");
             return toast.success("Data Exportada a Excell 😎", {
