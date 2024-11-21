@@ -157,13 +157,13 @@ const Admin = () => {
                       onClick={() => {
                         if (item.nombre2 === "") {
                           copyToClipboard(
-                            `https://invitacion-boda-maria-enmanuel.netlify.app/#/${encodeURIComponent(
+                            `https://invitacion-isaura.netlify.app/#/${encodeURIComponent(
                               item.nombre1
                             )}/null/${encodeURIComponent(item.telefono)}`
                           );
                         } else {
                           copyToClipboard(
-                            `https://invitacion-boda-maria-enmanuel.netlify.app/#/${encodeURIComponent(
+                            `https://invitacion-isaura.netlify.app/#/${encodeURIComponent(
                               item.nombre1
                             )}/${encodeURIComponent(
                               item.nombre2
