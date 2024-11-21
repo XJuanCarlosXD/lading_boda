@@ -9,11 +9,11 @@ module.exports = {
         merienda: ['cursive', "Merienda"]
       },
       colors: {
-        pink_custom: "#FFE4F3",
-        braun: "#70441C",
-        pink_mar: "#D897A0",
-        amber_re: "#CBA35C",
-        green_os: "#465539",
+        pink_custom: "#0C343C",
+        braun: "#D2B892",
+        pink_mar: "#3F7477",
+        amber_re: "#3ECC95",
+        green_os: "#3F7477",
       },
     },
   },

@@ -43,7 +43,7 @@ const Form = ({ onClick }) => {
         className="h-full absolute -left-40 max-w-none z-10"
         style={{ width: "37rem" }}
       />
-      <img
+      {/* <img
         src="/img/flower.png"
         alt="flower.png"
         className="absolute -bottom-10 left-0 -rotate-90 w-11/12"
@@ -58,7 +58,7 @@ const Form = ({ onClick }) => {
         src="/img/flower.png"
         alt="flower.png"
         className="absolute -top-10 -left-10 w-11/12"
-      />
+      /> */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="relative z-20 py-28 pb-10 px-6 w-full flex justify-center items-start flex-col gap-4"
@@ -87,8 +87,8 @@ const Form = ({ onClick }) => {
               <button
                 type="button"
                 className={`${
-                  watch("confirm") ? "bg-pink_custom text-black" : ""
-                } rounded-l-full w-full  py-2 px-4`}
+                  watch("confirm") ? "bg-pink_custom" : ""
+                } rounded-l-full w-full  py-2 px-4 text-white`}
                 onClick={() => {
                   setValue("confirm", true);
                 }}
@@ -101,8 +101,8 @@ const Form = ({ onClick }) => {
               <button
                 type="button"
                 className={`${
-                  watch("confirm") === false ? "bg-pink_custom text-black" : ""
-                } rounded-r-full w-full  py-2 px-4`}
+                  watch("confirm") === false ? "bg-pink_custom " : ""
+                } rounded-r-full w-full  py-2 px-4 text-white`}
                 onClick={() => {
                   setValue("confirm", false);
                 }}
@@ -135,7 +135,7 @@ const Form = ({ onClick }) => {
                   value=""
                   {...register(`asisti${index}`)}
                   name="bordered-checkbox"
-                  className="w-4 h-4 text-white bg-green_os border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2"
+                  className="w-4 h-4 text-white bg-green_os border-gray-300 rounded focus:ring-blue-500  focus:ring-2"
                   onClick={() => {
                     const currentValue = watch(`asisti${index}`);
                     const updatedValue = !currentValue;
@@ -179,7 +179,7 @@ const Form = ({ onClick }) => {
               Sugerir canción
             </label>
             <textarea
-              className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
+              className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-braun placeholder:pr-3 placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
               placeholder="¿Cuál canción te gustaría escuchar o bailar en nuestra boda?"
               rows={4}
               {...register("cancion")}
@@ -193,7 +193,7 @@ const Form = ({ onClick }) => {
               Comentarios o preguntas
             </label>
             <textarea
-              className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-pink_custom placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
+              className="outline-none w-full py-3 rounded-lg bg-green_os/70 border placeholder:text-braun placeholder:text-xl placeholder:translate-y-0.5 text-md text-pink_custom pl-4"
               placeholder="Si tienes algo para comentar lo puedes hacer aqui"
               rows={4}
               {...register("description")}
@@ -202,7 +202,7 @@ const Form = ({ onClick }) => {
 
           <button
             type="submit"
-            className="bg-pink_custom hover:bg-green_os hover:text-white text-2xl font-semibold rounded-full py-2"
+            className="bg-pink_custom hover:bg-green_os hover:text-white text-2xl text-braun font-semibold rounded-full py-2"
           >
             Enviar
           </button>

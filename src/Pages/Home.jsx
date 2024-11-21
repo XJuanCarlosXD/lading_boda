@@ -18,13 +18,13 @@ const Home = () => {
   const [state, setState] = React.useState(true);
   const [confirm, setConfirm] = React.useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const slides = [];
-  for (let i = 1; i <= 15; i++) {
-    if (i === 5 || i === 2 || i === 15 || i === 1 || i === 10) {
-    } else {
-      slides.push(`/images/boda-${i}.jpg`);
-    }
-  }
+  const slides = [
+    "https://appbot.nyc3.digitaloceanspaces.com/Isaura/Chill%20Night.png",
+    "https://appbot.nyc3.digitaloceanspaces.com/Isaura/isaura1.jpg",
+    "https://appbot.nyc3.digitaloceanspaces.com/Isaura/isaura2.jpg",
+    "https://appbot.nyc3.digitaloceanspaces.com/Isaura/isaura3.jpg",
+    "https://appbot.nyc3.digitaloceanspaces.com/Isaura/isaura4.jpg",
+  ];
 
   useEffect(() => {
     const dt = data.find((x) => x.telefono === tel);
@@ -74,11 +74,9 @@ const Home = () => {
   return (
     <div className="flex flex-col overflow-hidden mb-20">
       <Index />
-      <Invita />
       <Famili />
       <Save />
       <Contact />
-      <Present />
       {confirm && (
         <Form
           onClick={() => {
