@@ -1,13 +1,10 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React, { useState } from "react";
+import React from "react";
 
 const Contact = (props) => {
-  const [active, setActive] = useState(false);
   return (
     <div
-      className={`h-full bg-pink_custom relative w-full flex flex-col justify-start items-start ${
-        active && "z-30"
-      }`}
+      className={`h-full bg-pink_custom relative w-full flex flex-col justify-start items-start`}
     >
       <img
         src="/img/carton.png"

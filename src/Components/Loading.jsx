@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Tilty from "react-tilty";
 
 const Loading = () => {
   const [active, setActive] = useState(false);
