@@ -52,6 +52,11 @@ const Contact = (props) => {
               Jueves 19 de Diciembre{" "}
               <b className="text-white font-normal">8:00</b> pm (
               <b className="text-white font-normal">puntual</b>)
+              <br />
+            </p>
+            <p className="text-xl italic font-cursive font-bold text-center im-fell-english-sc-regular">
+              {" "}
+              Cada asistente será responsable de cubrir su consumo.
             </p>
           </div>
         </div>
